@@ -20,6 +20,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBOutlet var timeDisplay: UILabel!
+    
+    // 時間設定画面を開く処理
+    @IBAction func showSettingView(_ sender: Any) {
+        
+    }
+    // タイマーをスタートする処理
+    @IBAction func startTimer(_ sender: Any) {
+        
+    }
+    
+    // タイマーをストップする処理
+    @IBAction func stopTimer(_ sender: Any) {
+        
+    }
+    
 }
 

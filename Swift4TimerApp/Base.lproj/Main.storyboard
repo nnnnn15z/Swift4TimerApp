@@ -37,11 +37,17 @@
                                 <rect key="frame" x="95" y="422" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bKs-jE-qxc"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccx-NK-RqN">
                                 <rect key="frame" x="246" y="422" width="32" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vCE-UG-A0q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -54,10 +60,14 @@
                     <navigationItem key="navigationItem" id="QO4-Cn-6hk">
                         <barButtonItem key="rightBarButtonItem" title="時間設定" id="Upq-ro-s8C">
                             <connections>
+                                <action selector="showSettingView:" destination="BYZ-38-t0r" id="7G6-63-Jaf"/>
                                 <segue destination="6mI-hi-7Dd" kind="show" identifier="openSetting" id="ae6-5l-9eP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="timeDisplay" destination="HYS-h3-gOy" id="RNM-2U-A6x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
