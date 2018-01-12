@@ -89,11 +89,17 @@
                                 <rect key="frame" x="156" y="420" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="選択する"/>
+                                <connections>
+                                    <action selector="chooseAction:" destination="6mI-hi-7Dd" eventType="touchUpInside" id="36Y-rp-Eeu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="rJM-qV-KOO"/>
                     </view>
+                    <connections>
+                        <outlet property="timerPicker" destination="vWT-ie-Hjl" id="nYI-ro-std"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RqH-pF-3nR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

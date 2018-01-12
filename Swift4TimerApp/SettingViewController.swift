@@ -9,7 +9,9 @@
 import UIKit
 
 class SettingViewController: UIViewController {
-
+    
+    @IBOutlet weak var timerPicker: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +24,10 @@ class SettingViewController: UIViewController {
     }
     
 
+    @IBAction func chooseAction(_ sender: Any) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
