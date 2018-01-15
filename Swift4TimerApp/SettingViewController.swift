@@ -8,12 +8,26 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+class SettingViewController: UIViewController ,UIPickerViewDelegate,UIPickerViewDataSource{
     
     @IBOutlet weak var timerPicker: UIPickerView!
+    let valueArray = [10,30,60,120,180]
+    let settingKey = "timerValue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        timerPicker.delegate = self
+        timerPicker.dataSource = self
+        
+        let settings = UserDefaults.standard
+        let timerValue = settings.integer(forKey: settingKey)
+        
+        for row in 0..<valueArray.count {
+            if valueArray[row] == timerValue {
+                timerPicker.selectRow(row, inComponent: 0, animated: true)
+            }
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -27,6 +41,7 @@ class SettingViewController: UIViewController {
     @IBAction func chooseAction(_ sender: Any) {
         
     }
+    
     
     /*
     // MARK: - Navigation
