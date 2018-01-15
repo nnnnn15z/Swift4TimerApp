@@ -20,6 +20,11 @@ class ViewController: UIViewController {
         settings.register(defaults: [settingKey: 60])
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        duration = 0
+        _ = displayUpdate()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
