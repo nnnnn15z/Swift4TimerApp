@@ -39,8 +39,30 @@ class SettingViewController: UIViewController ,UIPickerViewDelegate,UIPickerView
     
 
     @IBAction func chooseAction(_ sender: Any) {
-        
+        _ = navigationController?.popViewController(animated: true)
     }
+    
+    // データの列数
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // データの個数
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return valueArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return String(valueArray[row])
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let settings = UserDefaults.standard
+        settings.setValue(valueArray[row], forKey: settingKey)
+        settings.synchronize()
+    }
+    
+    
     
     
     /*
