@@ -30,7 +30,12 @@ class ViewController: UIViewController {
     
     // 時間設定画面を開く処理
     @IBAction func showSettingView(_ sender: Any) {
-        
+        if let nowTimer = timer {
+            if nowTimer.isValid == true {
+                nowTimer.invalidate()
+            }
+            performSegue(withIdentifier: "openSetting", sender: nil)
+        }
     }
     // タイマーをスタートする処理
     @IBAction func startTimer(_ sender: Any) {
