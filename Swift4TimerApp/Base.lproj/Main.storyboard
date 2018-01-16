@@ -21,7 +21,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="EHT-rU-Cm8">
                                 <rect key="frame" x="87" y="209" width="200" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYS-h3-gOy">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="あとX秒" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYS-h3-gOy">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <nil key="textColor"/>
@@ -33,20 +33,21 @@
                                     <constraint firstAttribute="width" constant="200" id="MyO-yd-GqM"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaJ-qv-tbN">
-                                <rect key="frame" x="95" y="422" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccx-NK-RqN" userLabel="Reset">
+                                <rect key="frame" x="94" y="492" width="186" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start"/>
+                                <state key="normal" title="リセット"/>
                                 <connections>
-                                    <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bKs-jE-qxc"/>
+                                    <action selector="onResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="79m-EH-i9x"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ccx-NK-RqN">
-                                <rect key="frame" x="246" y="422" width="32" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaJ-qv-tbN">
+                                <rect key="frame" x="94" y="413" width="186" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Stop"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <state key="normal" title="スタート"/>
                                 <connections>
-                                    <action selector="stopTimer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vCE-UG-A0q"/>
+                                    <action selector="onStartOrStopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="abf-F3-Tsa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -66,7 +67,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="timeDisplay" destination="HYS-h3-gOy" id="RNM-2U-A6x"/>
+                        <outlet property="_resetButton" destination="Ccx-NK-RqN" id="UGO-cm-509"/>
+                        <outlet property="_startOrStopButton" destination="HaJ-qv-tbN" id="vIx-4q-j1w"/>
+                        <outlet property="_timerLabel" destination="HYS-h3-gOy" id="5ld-cD-mEQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
